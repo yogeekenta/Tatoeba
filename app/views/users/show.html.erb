@@ -1,0 +1,10 @@
+<div class="contents row" >
+    <p><%= @nickname %>さんの投稿一覧</p>
+    <% @metaphors.each do |metaphor| %>
+      <div class="content_post" style="background-image: url(<%= metaphor.image %>);">
+        <%= simple_format(metaphor.text) %>
+        <span class="name"><%= @nickname %></span>
+      </div>
+    <% end %>
+    <%= paginate(@metaphors) %>
+  </div>

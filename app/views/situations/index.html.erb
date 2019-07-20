@@ -1,0 +1,8 @@
+  <div class="contents row" >
+    <% @situations.each do |situation| %>
+      <div class="content_post" style="background-image: url(<%= situation.image %>);">
+        <a class="post" href="/situations/<%= situation.id %>/metaphors"><%= simple_format(situation.text) %></a>
+      </div>
+    <% end %>
+    <%= paginate(@situations) %>
+  </div>
